@@ -16,7 +16,7 @@ File uses dockerized shiny app that can be found here:
 
 # To get docker image from docker hub for kubernetes cluster
 
-image: bbcho/example_shiny_app:0.2.0 # tag is required
+image: bbcho/docker_shiny_example:0.2.0 # tag is required
 
 # Running the App
 
@@ -33,7 +33,7 @@ kubectl create -f loadbalancer.yaml
 minikube service shiny-loadbalancer
 ```
 
-# Other Notes
+# References
 
 ## To get Kubernetes to pull from local docker registry
 
@@ -48,8 +48,3 @@ kubectl get nodes -o yaml
 ## Connecting to Node
 
 Use either the internal IP that you get from the ```kubectl get nodes -o yaml``` command or the url from ```minikube service shiny-loadbalancer --url``` via powershell.
-
-# Reference
-
-[1] https://blog.sellorm.com/2021/04/25/shiny-app-in-docker/ <br>
-[2] https://hub.docker.com/r/rocker/shiny <br>

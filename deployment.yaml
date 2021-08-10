@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: shiny-app
-          image: bbcho/example_shiny_app:0.2.0
+          image: bbcho/docker_shiny_example:0.2.0
           # imagePullPolicy: Never # used to pull from local registry
-          # resources:
-          #   limits:
-          #     memory: "128Mi"
-          #     cpu: "500m"
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           ports:
             - containerPort: 3838
               name: shiny-port

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shiny-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: shiny-app
+  template:
+    metadata:
+      labels:
+        app: shiny-app
+    spec:
+      containers:
+        - name: shiny-app
+          image: bbcho/example_shiny_app:0.2.0
+          # imagePullPolicy: Never # used to pull from local registry
+          # resources:
+          #   limits:
+          #     memory: "128Mi"
+          #     cpu: "500m"
+          ports:
+            - containerPort: 3838
+              name: shiny-port
+            - containerPort: 8080
+              name: web-port

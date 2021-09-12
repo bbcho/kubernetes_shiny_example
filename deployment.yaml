@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: shiny-deployment
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: shiny-app
@@ -18,7 +18,7 @@ spec:
           # imagePullPolicy: Never # used to pull from local registry
           resources:
             limits:
-              memory: "128Mi"
+              memory: "1024Mi"
               cpu: "500m"
           ports:
             - containerPort: 3838
